@@ -21,6 +21,17 @@ export default function HomePage() {
         ))}
       </section>
 
+
+      <section className="glass rounded-2xl p-6 md:p-8">
+        <h2 className="text-2xl font-semibold">About Dwarika Rebuild</h2>
+        <p className="mt-2 text-slate-300">
+          Learn the long-term vision, virtual-country model, and centralized democracy framework behind Dwarika Rebuild.
+        </p>
+        <Link href="/about" className="mt-4 inline-block rounded-xl border border-white/15 bg-white/5 px-4 py-2 hover:border-neon/60">
+          Read About Page
+        </Link>
+      </section>
+
       <section className="glass rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl font-semibold">Explore Nation Modules</h2>
         <p className="mt-2 text-slate-300">Navigate live systems that power Dwarika Rebuild.</p>
