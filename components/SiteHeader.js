@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 const links = [
+  ['Home', '/'],
   ['About', '/about'],
   ['Governance', '/governance'],
   ['Economy', '/economy'],

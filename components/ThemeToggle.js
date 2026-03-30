@@ -6,7 +6,13 @@ export default function ThemeToggle() {
   const [light, setLight] = useState(false);
 
   useEffect(() => {
+    const saved = window.localStorage.getItem('dwarika-theme');
+    if (saved === 'light') setLight(true);
+  }, []);
+
+  useEffect(() => {
     document.body.classList.toggle('theme-light', light);
+    window.localStorage.setItem('dwarika-theme', light ? 'light' : 'dark');
   }, [light]);
 
   return (

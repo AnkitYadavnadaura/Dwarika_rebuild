@@ -12,13 +12,46 @@ body {
 
 body.theme-light {
   color-scheme: light;
-  background: linear-gradient(180deg, #dbeafe 0%, #eef2ff 100%);
+  background: radial-gradient(circle at 15% 5%, rgba(59, 130, 246, 0.12), transparent 28%),
+    radial-gradient(circle at 95% 0%, rgba(147, 51, 234, 0.1), transparent 35%), linear-gradient(180deg, #eaf2ff 0%, #f7f9ff 100%);
   color: #0f172a;
 }
 
 .glass {
   @apply border border-white/15 bg-white/5 backdrop-blur-xl;
   box-shadow: 0 0 0 1px rgba(76, 201, 255, 0.08), 0 12px 34px rgba(3, 7, 18, 0.45);
+}
+
+body.theme-light .glass {
+  border-color: rgba(30, 41, 59, 0.14);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.08), 0 10px 26px rgba(15, 23, 42, 0.12);
+}
+
+body.theme-light .text-slate-300,
+body.theme-light .text-slate-200,
+body.theme-light .text-slate-400 {
+  color: #334155 !important;
+}
+
+body.theme-light .text-neon {
+  color: #2563eb !important;
+}
+
+body.theme-light .bg-slate-950\/60,
+body.theme-light .bg-black\/40 {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.theme-light .border-white\/10,
+body.theme-light .border-white\/15,
+body.theme-light .border-white\/20 {
+  border-color: rgba(30, 41, 59, 0.2) !important;
+}
+
+body.theme-light .bg-neon,
+body.theme-light .bg-neon\/70 {
+  background-color: #2563eb !important;
 }
 
 .grid-overlay {
@@ -37,4 +70,8 @@ body.theme-light {
   transform: translate(-50%, -50%);
   z-index: 10;
   mix-blend-mode: screen;
+}
+
+body.theme-light .cursor-glow {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
 }
