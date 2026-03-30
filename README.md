@@ -7,10 +7,9 @@ Immersive futuristic Next.js platform for a centralized virtual country where hu
 - React
 - Tailwind CSS
 - Framer Motion
-- Three.js (`@react-three/fiber`, `@react-three/drei`)
 
 ## Key Experience
-- Cinematic hero with animated 3D globe
+- Cinematic hero with animated particle field
 - Interactive system overview cards
 - Governance flow visualization
 - Dashboard-style economy + AI panels
