@@ -1,24 +1,22 @@
 # Dwarika Rebuild
 
-Modern Next.js website for a futuristic virtual nation where humans and AI co-govern democracy and economy.
+A futuristic, centralized virtual-country website built with Next.js, Tailwind CSS, and Framer Motion.
 
-## Stack
+## Pages
 
-- Next.js + React
-- Tailwind CSS
-- CSS-based micro animations (build-safe, no runtime motion dependency)
+- `/` Home
+- `/about`
+- `/governance`
+- `/economy`
+- `/ai-agents`
+- `/open-source`
+- `/join`
+- `/citizenship`
+- `/roadmap`
 
-## Run locally
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
-
-## Pages
-
-- `/` Home
-- `/government`
-- `/economy`
-- `/citizenship`
-- `/roadmap`
