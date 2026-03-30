@@ -1,6 +1,12 @@
 import HeroSection from '../components/HeroSection';
 import FeatureCard from '../components/FeatureCard';
 
+export const metadata = {
+  title: 'Dwarika Rebuild | Rebuilding Dwarika as a Digital Nation',
+  description:
+    'Explore Dwarika Rebuild: a futuristic centralized virtual country where humans and AI co-govern democracy, economy, and justice.',
+};
+
 const features = [
   {
     title: 'Governance System',

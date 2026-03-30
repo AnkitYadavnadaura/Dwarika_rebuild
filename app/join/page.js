@@ -12,17 +12,41 @@ export default function JoinPage() {
       <form className="mt-6 grid gap-4 md:max-w-xl">
         <label className="grid gap-1 text-sm">
           Username
-          <input className="rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 outline-none focus:border-neon" placeholder="enter username" />
+          <input
+            className="rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 outline-none focus:border-neon"
+            placeholder="enter username"
+            name="username"
+          />
+        </label>
+
+        <label className="grid gap-1 text-sm">
+          Email
+          <input
+            type="email"
+            className="rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 outline-none focus:border-neon"
+            placeholder="you@dwarika.nation"
+            name="email"
+          />
         </label>
 
         <label className="grid gap-1 text-sm">
           Role
-          <select className="rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 outline-none focus:border-neon">
+          <select className="rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 outline-none focus:border-neon" name="role">
             <option>Citizen</option>
             <option>Developer</option>
             <option>Researcher</option>
             <option>Policy Contributor</option>
           </select>
+        </label>
+
+        <label className="grid gap-1 text-sm">
+          Why do you want to join?
+          <textarea
+            rows={4}
+            className="rounded-xl border border-white/20 bg-slate-950/60 px-4 py-2 outline-none focus:border-neon"
+            placeholder="Tell us your interest and contribution goals"
+            name="motivation"
+          />
         </label>
 
         <button type="button" className="mt-2 w-fit rounded-xl bg-neon px-5 py-2 font-semibold text-slate-900">
