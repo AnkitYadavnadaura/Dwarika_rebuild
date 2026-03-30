@@ -6,7 +6,7 @@ Modern Next.js website for a futuristic virtual nation where humans and AI co-go
 
 - Next.js + React
 - Tailwind CSS
-- Framer Motion
+- CSS-based micro animations (build-safe, no runtime motion dependency)
 
 ## Run locally
 
