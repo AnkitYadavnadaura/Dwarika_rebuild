@@ -1,27 +1,24 @@
 # Dwarika Rebuild
 
-A futuristic, centralized virtual-country website built with Next.js, Tailwind CSS, and Framer Motion.
+Immersive futuristic Next.js platform for a centralized virtual country where humans and AI co-govern democracy and economy.
 
-## Pages
+## Stack
+- Next.js App Router
+- React
+- Tailwind CSS
+- Framer Motion
+- Three.js (`@react-three/fiber`, `@react-three/drei`)
 
-- `/` Home
-- `/about`
-- `/governance`
-- `/economy`
-- `/ai-agents`
-- `/open-source`
-- `/join`
-- `/citizenship`
-- `/roadmap`
+## Key Experience
+- Cinematic hero with animated 3D globe
+- Interactive system overview cards
+- Governance flow visualization
+- Dashboard-style economy + AI panels
+- Open-source showcase + join form
+- Theme toggle + cursor glow micro-interaction
 
 ## Run
-
 ```bash
 npm install
 npm run dev
 ```
-
-
-## Dependency compatibility
-
-- React and React DOM are pinned to `18.3.1` for compatibility with current Framer Motion usage.

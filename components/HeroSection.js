@@ -1,47 +1,33 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 
-const particles = Array.from({ length: 20 }).map((_, i) => ({
-  id: i,
-  x: `${(i * 13) % 100}%`,
-  d: 4 + (i % 5),
-  delay: (i % 6) * 0.2,
-}));
+const NationScene = dynamic(() => import('./NationScene'), { ssr: false });
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-white/15 bg-panel/60 px-6 py-16 md:px-12">
-      <div className="grid-overlay absolute inset-0 opacity-30" />
-      {particles.map((p) => (
-        <motion.span
-          key={p.id}
-          className="absolute h-1.5 w-1.5 rounded-full bg-neon/70"
-          style={{ left: p.x, bottom: '8%' }}
-          animate={{ y: [0, -420], opacity: [0, 1, 0] }}
-          transition={{ duration: p.d, delay: p.delay, repeat: Infinity, ease: 'linear' }}
-        />
-      ))}
-
-      <div className="relative z-10 max-w-3xl">
-        <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="mb-4 text-xs font-bold tracking-[0.2em] text-neon">
-          DIGITAL CIVILIZATION PLATFORM
-        </motion.p>
-        <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl font-bold leading-tight md:text-6xl">
-          Rebuilding Dwarika as a Digital Nation
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mt-6 max-w-2xl text-lg text-slate-300">
-          A centralized virtual country where humans and AI agents co-govern democracy, economy, and justice through
-          transparent systems.
-        </motion.p>
-        <motion.button
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 rounded-xl bg-neon px-5 py-3 font-semibold text-slate-900"
-        >
-          Enter the Nation
-        </motion.button>
+    <section className="relative min-h-[82vh] overflow-hidden rounded-3xl border border-white/20 bg-[#050510]">
+      <div className="absolute inset-0 opacity-70">
+        <NationScene />
+      </div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(76,201,255,0.25),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(124,92,255,0.22),transparent_35%)]" />
+      <div className="relative z-10 mx-auto flex min-h-[82vh] max-w-5xl items-center px-6 py-16">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <p className="mb-4 text-xs font-bold tracking-[0.24em] text-neon">DWARIKA REBUILD • DIGITAL NATION CORE</p>
+          <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-7xl">Rebuilding Dwarika as a Digital Nation</h1>
+          <p className="mt-6 max-w-2xl text-lg text-slate-300">
+            AI + Humans governing a unified virtual economy through a centralized democracy engine, transparent civic
+            systems, and immersive simulation infrastructure.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(76,201,255,0.5)' }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-8 rounded-xl bg-neon px-6 py-3 font-semibold text-slate-950"
+          >
+            Enter the Nation
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

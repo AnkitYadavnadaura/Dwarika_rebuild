@@ -2,49 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
-}
+:root { color-scheme: dark; }
 
 body {
-  @apply bg-mesh-glow text-slate-100 antialiased;
+  @apply antialiased text-slate-100;
+  background: radial-gradient(circle at 15% 10%, rgba(76, 201, 255, 0.15), transparent 30%),
+    radial-gradient(circle at 85% 0%, rgba(124, 92, 255, 0.18), transparent 35%), #050510;
+}
+
+body.theme-light {
+  color-scheme: light;
+  background: linear-gradient(180deg, #dbeafe 0%, #eef2ff 100%);
+  color: #0f172a;
+}
+
+.glass {
+  @apply border border-white/15 bg-white/5 backdrop-blur-xl;
+  box-shadow: 0 0 0 1px rgba(76, 201, 255, 0.08), 0 12px 34px rgba(3, 7, 18, 0.45);
 }
 
 .grid-overlay {
   background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 44px 44px;
+  background-size: 42px 42px;
 }
 
-.glass {
-  @apply border border-white/15 bg-white/5 backdrop-blur-xl;
+.cursor-glow {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(76, 201, 255, 0.2), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  mix-blend-mode: screen;
 }
-
-@keyframes rise {
-  0% { transform: translateY(0); opacity: 0; }
-  15% { opacity: 1; }
-  100% { transform: translateY(-540%); opacity: 0; }
-}
-
-.particle {
-  animation-name: rise;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in,
-.fade-in-delay-1,
-.fade-in-delay-2,
-.fade-in-delay-3 {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.fade-in-delay-1 { animation-delay: 0.1s; }
-.fade-in-delay-2 { animation-delay: 0.2s; }
-.fade-in-delay-3 { animation-delay: 0.3s; }
