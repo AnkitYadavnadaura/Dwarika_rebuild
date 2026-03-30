@@ -1,123 +1,99 @@
-const pillars = [
-  {
-    title: 'Unreal Engine Living World',
-    text: 'A persistent metaverse-scale simulation with city systems, weather, transport, and AI citizens running in Unreal Engine.',
-  },
-  {
-    title: 'Blockchain Trust Layer',
-    text: 'Transparent contracts secure identity, treasury, and ownership for a fully trustless civic and economic backbone.',
-  },
-  {
-    title: 'Virtual Democracy',
-    text: 'Citizens propose, debate, and vote through on-chain governance with quadratic voting and delegated councils.',
-  },
-  {
-    title: 'Community-Built Future',
-    text: 'Open contribution model for builders, creators, and policy designers to shape the nation together.',
-  },
+const ministries = [
+  ['Ministry of Infrastructure', 'Smart transport, district planning, and AI city operations.'],
+  ['Ministry of Economy', 'Treasury policy, creator markets, and national growth index.'],
+  ['Ministry of Civic Systems', 'Voting, public debate, legislation, and citizen protections.'],
 ];
 
-const economy = [
-  'Creator-owned digital property & land zoning',
-  'AI-assisted jobs and public works economy',
-  'Cross-chain treasury and public budget dashboards',
-  'Real-time market index synchronized with simulation',
-];
-
-const roadmap = [
-  ['Phase 01', 'Genesis Charter', 'Founding constitution, identity mint, and core governance launch.'],
-  ['Phase 02', 'Urban Core', 'Unreal-based capital city with transport, districts, and social hubs.'],
-  ['Phase 03', 'Open Economy', 'Launch tokens, grants, businesses, and skill-based virtual labor markets.'],
-  ['Phase 04', 'Global Alliance', 'Interoperable nations, diplomatic protocols, and metaverse trade routes.'],
+const initiatives = [
+  'National Identity Passport (on-chain citizen profile)',
+  'Open Budget Portal with real-time expenditure visibility',
+  'Public Services API for builders and startups',
+  'Skill-to-income model for virtual workforce opportunities',
 ];
 
 export default function HomePage() {
   return (
-    <main className="site-shell">
-      <section className="hero-grid">
-        <div className="hero-card">
-          <p className="eyebrow">NEXT-GEN VIRTUAL COUNTRY</p>
-          <h1>NEXORA NATION</h1>
-          <p className="hero-text">
-            A digital civilization where governance, economy, and culture are simulated in Unreal Engine and secured by
-            blockchain. Built with Next.js for a massive, global community.
+    <main className="dw-shell">
+      <header className="topbar glass">
+        <div className="brand">
+          <span className="dot" />
+          <strong>Dwarika Rebiuld</strong>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#government">Government</a>
+          <a href="#economy">Economy</a>
+          <a href="#join">Join</a>
+        </nav>
+      </header>
+
+      <section className="hero glass" id="about">
+        <p className="tag">SOVEREIGN VIRTUAL REPUBLIC</p>
+        <h1>Welcome to Dwarika Rebiuld</h1>
+        <p>
+          Dwarika Rebiuld is a next-generation digital country where Unreal Engine simulates national life and
+          blockchain guarantees transparent governance. This is a people-first nation designed for global citizens,
+          creators, and builders.
+        </p>
+        <div className="hero-actions" id="join">
+          <button>Apply for Citizenship</button>
+          <button className="outline">Explore Constitution</button>
+        </div>
+      </section>
+
+      <section className="kpi-grid">
+        <article className="glass">
+          <span>Population</span>
+          <h3>2.4M</h3>
+        </article>
+        <article className="glass">
+          <span>Active Districts</span>
+          <h3>128</h3>
+        </article>
+        <article className="glass">
+          <span>Public Proposals</span>
+          <h3>9,841</h3>
+        </article>
+        <article className="glass">
+          <span>Virtual GDP</span>
+          <h3>14.7B DWR</h3>
+        </article>
+      </section>
+
+      <section className="panel-grid" id="government">
+        <article className="glass">
+          <h2>Government Structure</h2>
+          <p>
+            A constitutional digital democracy where citizens submit proposals, debate policy, and vote through
+            tamper-proof on-chain systems.
           </p>
-          <div className="hero-cta">
-            <button>Join Founders Program</button>
-            <button className="ghost">Read Whitepaper</button>
+          <div className="mini-cards">
+            {ministries.map(([name, desc]) => (
+              <div className="mini" key={name}>
+                <h4>{name}</h4>
+                <p>{desc}</p>
+              </div>
+            ))}
           </div>
-        </div>
+        </article>
 
-        <aside className="stats-panel">
-          <h2>Live Nation Snapshot</h2>
+        <article className="glass highlight" id="economy">
+          <h2>National Economy Program</h2>
           <ul>
-            <li>
-              <span>Citizens</span>
-              <strong>2,450,192</strong>
-            </li>
-            <li>
-              <span>On-chain Proposals</span>
-              <strong>9,841</strong>
-            </li>
-            <li>
-              <span>Virtual GDP</span>
-              <strong>$14.7B NVT</strong>
-            </li>
-            <li>
-              <span>Districts Simulated</span>
-              <strong>128</strong>
-            </li>
-          </ul>
-        </aside>
-      </section>
-
-      <section>
-        <h2 className="section-title">Core Pillars</h2>
-        <div className="cards-grid">
-          {pillars.map((pillar) => (
-            <article key={pillar.title} className="glass-card">
-              <h3>{pillar.title}</h3>
-              <p>{pillar.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="split-panel">
-        <div className="glass-card">
-          <h2>Virtual Economy Engine</h2>
-          <ul className="feature-list">
-            {economy.map((item) => (
+            {initiatives.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </div>
-
-        <div className="glass-card highlight">
-          <h2>Democracy Protocol</h2>
           <p>
-            Every policy proposal is auditable, debate sessions are archived, and final execution is driven by smart
-            contract consensus. Civic trust is programmable.
+            Every economic action is auditable. Citizens can own land, launch businesses, access grants, and contribute
+            to national development through transparent market systems.
           </p>
-          <p>
-            Citizens can form parties, submit constitutional amendments, and vote through secure identity and
-            anti-sybil protections.
-          </p>
-        </div>
+        </article>
       </section>
 
-      <section>
-        <h2 className="section-title">Development Roadmap</h2>
-        <div className="timeline">
-          {roadmap.map(([phase, title, description]) => (
-            <article className="timeline-item" key={phase}>
-              <span>{phase}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <footer className="glass footer">
+        <p>© 2026 Dwarika Rebiuld — Ministry of Digital Civilization</p>
+      </footer>
     </main>
   );
 }

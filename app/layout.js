@@ -1,9 +1,9 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Nexora Nation | Virtual Civilization',
+  title: 'Dwarika Rebiuld | Digital Sovereign Nation',
   description:
-    'A next-gen virtual nation powered by Unreal Engine simulation, Next.js web, and blockchain governance.',
+    'Official web portal for Dwarika Rebiuld, a futuristic virtual nation powered by Unreal Engine simulation and blockchain governance.',
 };
 
 export default function RootLayout({ children }) {
