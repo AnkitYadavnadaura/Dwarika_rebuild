@@ -1,62 +1,44 @@
 import Link from 'next/link';
+import HeroSection from '../components/HeroSection';
 
-const highlights = [
-  ['Population', '2.4M'],
-  ['Districts', '128'],
-  ['Public Proposals', '9,841'],
-  ['Virtual GDP', '14.7B DWR'],
+const cards = [
+  ['AI Governance Core', 'Multi-agent policy analysis and governance execution with public audit trails.'],
+  ['National Economy Layer', 'Digital assets, treasury intelligence, and programmable commerce systems.'],
+  ['Civic Identity Stack', 'Persistent digital citizenship, reputation, and voting rights infrastructure.'],
 ];
 
 export default function HomePage() {
   return (
-    <>
-      <section className="hero glass">
-        <p className="tag">SOVEREIGN VIRTUAL REPUBLIC</p>
-        <h1>Welcome to Dwarika Rebiuld</h1>
-        <p>
-          A working digital-country portal where you can explore ministries, economy dashboards, citizen onboarding,
-          and long-term nation-building programs.
-        </p>
-        <div className="hero-actions">
-          <Link className="btn" href="/citizenship">
-            Apply for Citizenship
-          </Link>
-          <Link className="btn outline" href="/government">
-            View Government
-          </Link>
-        </div>
-      </section>
+    <div className="space-y-6">
+      <HeroSection />
 
-      <section className="kpi-grid">
-        {highlights.map(([k, v]) => (
-          <article className="glass" key={k}>
-            <span>{k}</span>
-            <h3>{v}</h3>
+      <section className="grid gap-4 md:grid-cols-3">
+        {cards.map(([title, text]) => (
+          <article key={title} className="glass rounded-2xl p-5">
+            <h3 className="text-lg font-semibold text-neon">{title}</h3>
+            <p className="mt-2 text-sm text-slate-300">{text}</p>
           </article>
         ))}
       </section>
 
-      <section className="panel-grid">
-        <article className="glass">
-          <h2>What you can do</h2>
-          <ul>
-            <li>Track national development KPIs</li>
-            <li>Read policy proposals and vote sessions</li>
-            <li>Explore economic initiatives and grants</li>
-            <li>Join skills-to-work citizen programs</li>
-          </ul>
-        </article>
-        <article className="glass highlight">
-          <h2>Quick Navigation</h2>
-          <p>Use these modules to interact with the country systems:</p>
-          <div className="quick-links">
-            <Link href="/government">Government Portal</Link>
-            <Link href="/economy">Economy Dashboard</Link>
-            <Link href="/citizenship">Citizenship Center</Link>
-            <Link href="/roadmap">Nation Roadmap</Link>
-          </div>
-        </article>
+      <section className="glass rounded-2xl p-6 md:p-8">
+        <h2 className="text-2xl font-semibold">Explore Nation Modules</h2>
+        <p className="mt-2 text-slate-300">Navigate live systems that power Dwarika Rebuild.</p>
+        <div className="mt-5 grid gap-3 md:grid-cols-4">
+          <Link href="/government" className="rounded-xl border border-white/15 bg-white/5 p-4 hover:border-neon/60">
+            Government
+          </Link>
+          <Link href="/economy" className="rounded-xl border border-white/15 bg-white/5 p-4 hover:border-neon/60">
+            Economy
+          </Link>
+          <Link href="/citizenship" className="rounded-xl border border-white/15 bg-white/5 p-4 hover:border-neon/60">
+            Citizenship
+          </Link>
+          <Link href="/roadmap" className="rounded-xl border border-white/15 bg-white/5 p-4 hover:border-neon/60">
+            Roadmap
+          </Link>
+        </div>
       </section>
-    </>
+    </div>
   );
 }

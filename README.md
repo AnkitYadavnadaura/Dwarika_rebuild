@@ -1,19 +1,24 @@
-# Dwarika Rebiuld
+# Dwarika Rebuild
 
-Official futuristic web portal concept for a virtual sovereign country.
+Modern Next.js website for a futuristic virtual nation where humans and AI co-govern democracy and economy.
 
-## Local run
+## Stack
+
+- Next.js + React
+- Tailwind CSS
+- Framer Motion
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Deployment
+## Pages
 
-- Production deploy workflow runs from `main` using GitHub Actions.
-- The workflow performs install, build, and deploy steps without repository-level Vercel auth token wiring.
-
-## Security update (CVE-2025-66478)
-
-Next.js is pinned to `15.5.7` to avoid vulnerable releases.
+- `/` Home
+- `/government`
+- `/economy`
+- `/citizenship`
+- `/roadmap`

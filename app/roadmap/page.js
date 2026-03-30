@@ -1,21 +1,21 @@
 const roadmap = [
-  ['Q2 2026', 'Capital District Expansion', 'Add mobility, housing, and trade zones in Unreal simulation.'],
-  ['Q3 2026', 'Citizen Assembly v2', 'Launch delegated voting and public amendment cycles.'],
-  ['Q4 2026', 'Economic Layer v3', 'Inter-district commerce and sovereign treasury automation.'],
-  ['Q1 2027', 'Alliance Program', 'Open diplomatic and interoperability channels with partner worlds.'],
+  ['Phase I', 'Constitution Launch', 'Core governance stack, identity rails, and civic onboarding.'],
+  ['Phase II', 'Economic Core', 'Treasury automation, labor markets, and grants engine.'],
+  ['Phase III', 'AI Civil Services', '24/7 AI public agents for support, compliance, and analytics.'],
+  ['Phase IV', 'Inter-Nation Layer', 'Cross-world treaties, diplomacy, and interoperable commerce.'],
 ];
 
 export default function RoadmapPage() {
   return (
-    <section className="glass section-page">
-      <h1>National Roadmap</h1>
-      <p>Long-term development milestones for Dwarika Rebiuld.</p>
-      <div className="cards-2">
+    <section className="glass rounded-3xl p-7 md:p-10">
+      <h1 className="text-4xl font-bold">Nation Roadmap</h1>
+      <p className="mt-3 text-slate-300">Long-term execution plan for a resilient digital civilization.</p>
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {roadmap.map(([phase, title, text]) => (
-          <article className="mini" key={phase}>
-            <span className="phase">{phase}</span>
-            <h3>{title}</h3>
-            <p>{text}</p>
+          <article key={phase} className="rounded-2xl border border-white/15 bg-white/5 p-5">
+            <p className="text-xs font-bold tracking-wider text-neon">{phase}</p>
+            <h3 className="mt-2 text-xl font-semibold">{title}</h3>
+            <p className="mt-2 text-sm text-slate-300">{text}</p>
           </article>
         ))}
       </div>
