@@ -1,4 +1,6 @@
 import './globals.css';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 
 export const metadata = {
   title: 'Dwarika Rebiuld | Digital Sovereign Nation',
@@ -9,7 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <main className="dw-shell">
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </main>
+      </body>
     </html>
   );
 }
