@@ -1,30 +1,38 @@
 import Link from 'next/link';
 
+const modules = [
+  ['Civic AI Senate', 'Hybrid chamber where citizens and AI delegates co-draft bills with explainable reasoning trails.'],
+  ['AGI Ethics Court', 'High-trust tribunal validating AGI proposals against rights, safety, and constitutional boundaries.'],
+  ['Policy Simulator', 'Runs millions of social/economic what-if scenarios before any law is executed on-chain.'],
+  ['Emergency Override Grid', 'Rapid response framework for disasters, exploits, or adversarial AI incidents.'],
+];
+
 export default function GovernancePage() {
   return (
     <main className="subpage-shell">
       <Link href="/" className="back-link">← Back to nation overview</Link>
       <h1>Governance Matrix</h1>
-      <p className="subtitle">Where humans and AI advisors deliberate, simulate outcomes, and execute civic decisions.</p>
+      <p className="subtitle">
+        A constitutional operating layer where humans, AI advisors, and future AGI systems collaborate under transparent law.
+      </p>
+
+      <section className="panel subpage-panel">
+        <h2>Decision Lifecycle</h2>
+        <div className="grid four">
+          <article className="mini-card"><strong>01</strong><p>Citizen or guild submits a proposal.</p></article>
+          <article className="mini-card"><strong>02</strong><p>AI advisor cluster simulates impact and risk.</p></article>
+          <article className="mini-card"><strong>03</strong><p>Public deliberation with evidence-backed debate.</p></article>
+          <article className="mini-card"><strong>04</strong><p>On-chain execution + live compliance telemetry.</p></article>
+        </div>
+      </section>
+
       <section className="grid two">
-        <article className="panel subpage-panel">
-          <h2>Decision Flow</h2>
-          <ol>
-            <li>Citizen drafts proposal.</li>
-            <li>AI Advisor stress-tests policy outcomes.</li>
-            <li>Deliberation council votes with transparent weight.</li>
-            <li>Smart execution module activates approved policy.</li>
-          </ol>
-        </article>
-        <article className="panel subpage-panel">
-          <h2>Governance Principles</h2>
-          <ul>
-            <li>Auditability by default</li>
-            <li>Anti-sybil civic identity</li>
-            <li>Fast emergency amendment protocol</li>
-            <li>Public simulation snapshots for every major law</li>
-          </ul>
-        </article>
+        {modules.map(([title, text]) => (
+          <article key={title} className="panel subpage-panel">
+            <h2>{title}</h2>
+            <p>{text}</p>
+          </article>
+        ))}
       </section>
     </main>
   );

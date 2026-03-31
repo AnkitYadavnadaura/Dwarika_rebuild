@@ -5,15 +5,32 @@ export default function OpenSourcePage() {
     <main className="subpage-shell">
       <Link href="/" className="back-link">← Back to nation overview</Link>
       <h1>Open Source Stack</h1>
-      <p className="subtitle">Dwarika Rebuild is designed as a transparent protocol for builders, civic designers, and AI engineers.</p>
+      <p className="subtitle">
+        Build the operating system of a digital nation: governance protocols, AI safety, immersive interfaces, and blockchain rails.
+      </p>
+
+      <section className="grid two">
+        <article className="panel subpage-panel">
+          <h2>Core Repositories</h2>
+          <ul>
+            <li>Governance Kernel (charter + proposal engine)</li>
+            <li>Economy Layer (treasury, markets, settlement)</li>
+            <li>Agent Framework (AI/AGI policy + orchestration)</li>
+            <li>XR Interface (VR/AR citizen interactions)</li>
+          </ul>
+        </article>
+        <article className="panel subpage-panel">
+          <h2>Contribution Standards</h2>
+          <ul>
+            <li>Security-first reviews and threat modeling</li>
+            <li>Open audit logs for every merge</li>
+            <li>RFC process for major protocol changes</li>
+            <li>Community co-ownership and transparent grants</li>
+          </ul>
+        </article>
+      </section>
+
       <article className="panel subpage-panel">
-        <h2>Contribution Paths</h2>
-        <ul>
-          <li>Frontend UI / data visualization</li>
-          <li>Governance simulation models</li>
-          <li>AI safety, auditing, and guardrails</li>
-          <li>Community docs, charters, and onboarding</li>
-        </ul>
         <a className="btn-primary inline-btn" href="https://github.com" target="_blank" rel="noreferrer">View on GitHub</a>
       </article>
     </main>

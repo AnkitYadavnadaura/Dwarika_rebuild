@@ -35,7 +35,7 @@ body {
   overflow: hidden;
   width: min(1200px, 100% - 2rem);
   margin-inline: auto;
-  padding: 2rem 0 7rem;
+  padding: 6rem 0 7rem;
   display: grid;
   gap: 4rem;
 }
@@ -434,7 +434,8 @@ textarea:focus {
   .grid.three,
   .grid.two,
   .governance-flow,
-  .form-row {
+  .form-row,
+  .grid.four {
     grid-template-columns: 1fr;
   }
 
@@ -449,13 +450,18 @@ textarea:focus {
 }
 
 .top-nav {
-  position: sticky;
-  top: 1rem;
-  z-index: 15;
+  position: fixed;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: min(1200px, calc(100% - 2rem));
   display: flex;
   gap: 0.35rem;
   flex-wrap: wrap;
   padding: 0.6rem;
+  background: rgba(8, 12, 22, 0.72);
+  backdrop-filter: blur(14px);
 }
 
 .top-nav a {
@@ -476,13 +482,28 @@ textarea:focus {
 .subpage-shell {
   width: min(1020px, 100% - 2rem);
   margin: 0 auto;
-  padding: 2rem 0 5rem;
+  padding: 6rem 0 5rem;
   display: grid;
   gap: 1rem;
 }
 
 .subpage-panel {
   padding: 1.2rem;
+}
+
+.grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mini-card {
+  border: 1px solid rgba(129, 173, 255, 0.25);
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: rgba(7, 13, 28, 0.7);
+}
+
+.mini-card strong {
+  color: var(--cyan);
 }
 
 .back-link {

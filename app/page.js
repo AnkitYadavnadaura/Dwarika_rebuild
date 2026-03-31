@@ -5,7 +5,6 @@ import Counter from '../components/Counter';
 import CursorGlow from '../components/CursorGlow';
 import Reveal from '../components/Reveal';
 import StarfieldCanvas from '../components/StarfieldCanvas';
-import TopNav from '../components/TopNav';
 
 const systems = [
   {
@@ -51,8 +50,6 @@ export default function HomePage() {
           <div className="loading-line" />
         </div>
       </div>
-
-      <TopNav />
 
       <section className="hero">
         <Reveal className="hero-content">
