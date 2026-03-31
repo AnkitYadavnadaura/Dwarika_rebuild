@@ -447,3 +447,50 @@ textarea:focus {
     padding-top: 3rem;
   }
 }
+
+.top-nav {
+  position: sticky;
+  top: 1rem;
+  z-index: 15;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  padding: 0.6rem;
+}
+
+.top-nav a {
+  color: #c0d7ff;
+  text-decoration: none;
+  padding: 0.45rem 0.72rem;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.top-nav a:hover {
+  border-color: rgba(81, 230, 255, 0.48);
+  background: rgba(81, 230, 255, 0.08);
+}
+
+.subpage-shell {
+  width: min(1020px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 2rem 0 5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.subpage-panel {
+  padding: 1.2rem;
+}
+
+.back-link {
+  color: #9bc5ff;
+  text-decoration: none;
+}
+
+.inline-btn {
+  display: inline-block;
+  text-decoration: none;
+}
