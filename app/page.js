@@ -1,122 +1,193 @@
-const pillars = [
+'use client';
+
+import { useEffect, useState } from 'react';
+import Counter from '../components/Counter';
+import CursorGlow from '../components/CursorGlow';
+import Reveal from '../components/Reveal';
+import StarfieldCanvas from '../components/StarfieldCanvas';
+
+const systems = [
   {
-    title: 'Unreal Engine Living World',
-    text: 'A persistent metaverse-scale simulation with city systems, weather, transport, and AI citizens running in Unreal Engine.',
+    title: 'Governance',
+    description: 'Co-created laws, AI policy simulations, and transparent voting cycles with live constitutional feedback loops.',
+    metric: '9,842 Active Proposals',
   },
   {
-    title: 'Blockchain Trust Layer',
-    text: 'Transparent contracts secure identity, treasury, and ownership for a fully trustless civic and economic backbone.',
+    title: 'Economy',
+    description: 'Programmable fiscal layers, tokenized public services, and intelligent market balancing for digital prosperity.',
+    metric: '$14.7B Simulated GDP',
   },
   {
-    title: 'Virtual Democracy',
-    text: 'Citizens propose, debate, and vote through on-chain governance with quadratic voting and delegated councils.',
-  },
-  {
-    title: 'Community-Built Future',
-    text: 'Open contribution model for builders, creators, and policy designers to shape the nation together.',
+    title: 'AI Agents',
+    description: 'Specialized policy, treasury, infrastructure, and diplomacy agents collaborating directly with human councils.',
+    metric: '246 Sovereign Agents',
   },
 ];
 
-const economy = [
-  'Creator-owned digital property & land zoning',
-  'AI-assisted jobs and public works economy',
-  'Cross-chain treasury and public budget dashboards',
-  'Real-time market index synchronized with simulation',
-];
-
-const roadmap = [
-  ['Phase 01', 'Genesis Charter', 'Founding constitution, identity mint, and core governance launch.'],
-  ['Phase 02', 'Urban Core', 'Unreal-based capital city with transport, districts, and social hubs.'],
-  ['Phase 03', 'Open Economy', 'Launch tokens, grants, businesses, and skill-based virtual labor markets.'],
-  ['Phase 04', 'Global Alliance', 'Interoperable nations, diplomatic protocols, and metaverse trade routes.'],
+const agents = [
+  ['Policy Oracle', 'Runs scenario analysis and recommends constitutional amendments.'],
+  ['Treasury Sentinel', 'Monitors expenditures and reallocates civic budgets in real time.'],
+  ['Infrastructure Architect', 'Optimizes transport, housing, and utility expansions autonomously.'],
+  ['Diplomacy Node', 'Negotiates treaties across interoperable virtual nations.'],
 ];
 
 export default function HomePage() {
-  return (
-    <main className="site-shell">
-      <section className="hero-grid">
-        <div className="hero-card">
-          <p className="eyebrow">NEXT-GEN VIRTUAL COUNTRY</p>
-          <h1>NEXORA NATION</h1>
-          <p className="hero-text">
-            A digital civilization where governance, economy, and culture are simulated in Unreal Engine and secured by
-            blockchain. Built with Next.js for a massive, global community.
-          </p>
-          <div className="hero-cta">
-            <button>Join Founders Program</button>
-            <button className="ghost">Read Whitepaper</button>
-          </div>
-        </div>
+  const [loading, setLoading] = useState(true);
 
-        <aside className="stats-panel">
-          <h2>Live Nation Snapshot</h2>
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <main className="nation-shell">
+      <CursorGlow />
+      <StarfieldCanvas />
+
+      <div className={`loading-overlay ${loading ? 'loading-overlay-visible' : ''}`}>
+        <div>
+          <p>Initializing Dwarika Core</p>
+          <div className="loading-line" />
+        </div>
+      </div>
+
+      <section className="hero">
+        <Reveal className="hero-content">
+          <p className="tag">DIGITAL SOVEREIGNTY PROTOCOL</p>
+          <h1>Rebuilding Dwarika as a Digital Nation</h1>
+          <p className="subtitle">AI + Humans governing a unified virtual economy.</p>
+          <div className="cta-row">
+            <button className="btn-primary">Enter the Nation</button>
+            <button className="btn-secondary">Read Governance Paper</button>
+          </div>
+        </Reveal>
+        <Reveal className="hero-panel" delay={180}>
+          <h2>Nation Core Status</h2>
           <ul>
             <li>
-              <span>Citizens</span>
-              <strong>2,450,192</strong>
+              Citizen Network <strong><Counter end={2450192} /></strong>
             </li>
             <li>
-              <span>On-chain Proposals</span>
-              <strong>9,841</strong>
+              Governance Uptime <strong><Counter end={99} suffix=".99%" /></strong>
             </li>
             <li>
-              <span>Virtual GDP</span>
-              <strong>$14.7B NVT</strong>
-            </li>
-            <li>
-              <span>Districts Simulated</span>
-              <strong>128</strong>
+              Active Districts <strong><Counter end={128} /></strong>
             </li>
           </ul>
-        </aside>
+        </Reveal>
       </section>
 
-      <section>
-        <h2 className="section-title">Core Pillars</h2>
-        <div className="cards-grid">
-          {pillars.map((pillar) => (
-            <article key={pillar.title} className="glass-card">
-              <h3>{pillar.title}</h3>
-              <p>{pillar.text}</p>
-            </article>
+      <section className="section">
+        <Reveal>
+          <h2>System Overview</h2>
+        </Reveal>
+        <div className="grid three">
+          {systems.map((system, i) => (
+            <Reveal key={system.title} delay={i * 110} className="panel interactive">
+              <h3>{system.title}</h3>
+              <p>{system.description}</p>
+              <span>{system.metric}</span>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="split-panel">
-        <div className="glass-card">
-          <h2>Virtual Economy Engine</h2>
-          <ul className="feature-list">
-            {economy.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+      <section className="section">
+        <Reveal>
+          <h2>Governance Visualization</h2>
+        </Reveal>
+        <Reveal className="panel governance-flow">
+          {['User', 'AI Advisor', 'Decision', 'Execution'].map((step) => (
+            <div key={step} className="flow-node">
+              {step}
+            </div>
+          ))}
+          <div className="flow-line" />
+        </Reveal>
+      </section>
 
-        <div className="glass-card highlight">
-          <h2>Democracy Protocol</h2>
-          <p>
-            Every policy proposal is auditable, debate sessions are archived, and final execution is driven by smart
-            contract consensus. Civic trust is programmable.
-          </p>
-          <p>
-            Citizens can form parties, submit constitutional amendments, and vote through secure identity and
-            anti-sybil protections.
-          </p>
+      <section className="section">
+        <Reveal>
+          <h2>Economy System</h2>
+        </Reveal>
+        <div className="grid two">
+          <Reveal className="panel">
+            <h3>Live Fiscal Indicators</h3>
+            <div className="stats-grid">
+              <article>
+                <p>Treasury Reserve</p>
+                <strong>$<Counter end={3280} suffix="M" /></strong>
+              </article>
+              <article>
+                <p>Daily Transactions</p>
+                <strong><Counter end={82741} /></strong>
+              </article>
+              <article>
+                <p>Agent-Managed Budgets</p>
+                <strong><Counter end={74} suffix="%" /></strong>
+              </article>
+              <article>
+                <p>Citizen Income Index</p>
+                <strong><Counter end={93} suffix=".4" /></strong>
+              </article>
+            </div>
+          </Reveal>
+          <Reveal delay={120} className="panel graph-panel">
+            <h3>Macro Trend Simulation</h3>
+            <div className="bars">
+              {[48, 62, 58, 74, 70, 88, 92].map((h, i) => (
+                <div key={i} className="bar" style={{ height: `${h}%` }} />
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section>
-        <h2 className="section-title">Development Roadmap</h2>
-        <div className="timeline">
-          {roadmap.map(([phase, title, description]) => (
-            <article className="timeline-item" key={phase}>
-              <span>{phase}</span>
-              <h3>{title}</h3>
+      <section className="section">
+        <Reveal>
+          <h2>AI Agents</h2>
+        </Reveal>
+        <div className="grid two">
+          {agents.map(([name, description], i) => (
+            <Reveal key={name} className="panel agent" delay={i * 90}>
+              <h3>{name}</h3>
               <p>{description}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <Reveal className="panel open-source">
+          <h2>Open Source Nation Stack</h2>
+          <pre>{`git clone github.com/dwarika/rebuild\ncd rebuild && npm run dev`}</pre>
+          <button className="btn-primary">View on GitHub</button>
+        </Reveal>
+      </section>
+
+      <section className="section">
+        <Reveal>
+          <h2>Join the Rebuild</h2>
+        </Reveal>
+        <Reveal className="panel form-panel">
+          <div className="form-row">
+            <input placeholder="Full name" />
+            <input placeholder="Email address" />
+          </div>
+          <div className="form-row">
+            <select defaultValue="">
+              <option value="" disabled>
+                Select your role
+              </option>
+              <option>Citizen Builder</option>
+              <option>Policy Contributor</option>
+              <option>AI Agent Engineer</option>
+            </select>
+            <input placeholder="Country / Timezone" />
+          </div>
+          <textarea placeholder="Why do you want to help rebuild Dwarika?" rows={5} />
+          <button className="btn-primary">Apply for Citizenship</button>
+        </Reveal>
       </section>
     </main>
   );

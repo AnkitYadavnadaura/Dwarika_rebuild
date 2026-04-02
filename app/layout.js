@@ -1,15 +1,18 @@
+import TopNav from '../components/TopNav';
 import './globals.css';
 
 export const metadata = {
-  title: 'Nexora Nation | Virtual Civilization',
-  description:
-    'A next-gen virtual nation powered by Unreal Engine simulation, Next.js web, and blockchain governance.',
+  title: 'Dwarika Rebuild | Digital Nation Interface',
+  description: 'Dwarika Rebuild is an immersive digital nation where humans and AI co-govern democracy and economy.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TopNav />
+        {children}
+      </body>
     </html>
   );
 }
